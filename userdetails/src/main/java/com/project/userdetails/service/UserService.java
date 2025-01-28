@@ -21,8 +21,8 @@ public class UserService {
 	//create user
 	public String createUser(User newUser) {
 		Optional<User> existingUser = users.stream()
-				  					.filter(user->user.getUserName().equals(newUser.getUserName()))
-				  					.findFirst();
+			.filter(user->user.getUserName().equals(newUser.getUserName()))
+			.findFirst();
 		
 		if(existingUser.isPresent()) {
 			return "user already exists";
